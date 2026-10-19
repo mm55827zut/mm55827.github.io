@@ -3,12 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Imie Nazwisko (00000) - IS LAB B</title>
+    <title>Maciej Milczarek (55827) - IS LAB B</title>
 
     <link rel="stylesheet" href="styles.css" type="text/css">
     <script src="scripts.js" defer></script>
 </head>
 <body>
+<header>
+    <h1>lista todo</h1>
 
+</header>
+<main>
+    <section id="search-bar">
+        <label for="search-input"></label>
+        <input type="text" id="search-input" placeholder="szukaj zadań (min. 2 znaki)">
+
+    </section>
+<hr>
+
+    <ul id="todo-list">
+
+    </ul>
+    <form id="todo-form">
+        <label for="todo-input"></label>
+        <input id="todo-input" name="task" type="text" placeholder="Wpisz treść zadania" required minlength="3" maxlength="255">
+        <label for="todo-koniec"></label>
+        <input id="todo-koniec" name="task" type="datetime-local" placeholder="Wpisz treść zadania">
+        <button type="submit">Dodaj</button>
+    </form>
+
+
+</main>
 </body>
 </html>

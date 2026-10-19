@@ -1,3 +1,109 @@
 body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #f3fff3;
+  font-family: Arial, sans-serif;
+}
+
+header,
+main {
+  width: min(100%, 600px);
+}
+
+header,
+h1,
+h2 {
+  text-align: center;
+}
+
+#search-bar input,
+form input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 14px;
+}
+
+#search-bar label,
+form label {
+  display: block;
+}
+
+#todo-list {
+  padding: 0;
+  list-style: none;
+}
+
+#todo-list li {
+  display: grid;
+  grid-template-columns: 1fr 140px auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: white;
+  border-radius: 6px;
+}
+
+.todo-date {
+  min-height: 1em;
+}
+
+form button,
+#todo-list button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 10px;
+}
+
+form label:first-of-type {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+#todo-input {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+form label:nth-of-type(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#todo-koniec {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+form input {
+  width: 100%;
+  min-width: 0;
+  margin: 6px 0 0;
+}
+
+form button {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+@media (max-width: 500px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form > * {
+    grid-column: auto;
+    grid-row: auto;
+  }
 }
