@@ -1,3 +1,4 @@
+//poczatek copilot
 class Todo {
   constructor() {
     this.list = document.querySelector("#todo-list");
@@ -232,3 +233,4 @@ class Todo {
 }
 
 document.todo = new Todo();
+//koniec copilot
