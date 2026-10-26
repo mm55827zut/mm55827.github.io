@@ -1,0 +1,56 @@
+<!--copilot z poprawkami-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maciej Milczarek 55827 - IS LAB C</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+<main class="page">
+    <header class="header">
+        <a class="brand" href="#" aria-label="Pogoda">
+        </a>
+    </header>
+
+    <section class="hero" aria-labelledby="page-title">
+        <p class="intro">
+            Wpisz miasto
+        </p>
+
+        <div class="search">
+            <label class="visually-hidden" for="locationInput">Nazwa miasta</label>
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input
+                id="locationInput"
+                type="text"
+                placeholder="Np. Warszawa"
+                autocomplete="off"
+            >
+            <button id="checkButton" type="button">
+                Sprawdź pogodę <span aria-hidden="true">→</span>
+            </button>
+        </div>
+        <p class="search-note">Wpisz nazwę miasta</p>
+    </section>
+
+    <section class="forecast" aria-labelledby="results-title">
+        <div class="forecast-heading">
+            <div>
+                <h2 id="results-title">Pogoda</h2>
+            </div>
+        </div>
+
+        <div id="results" aria-live="polite"></div>
+    </section>
+
+    <footer class="footer">
+        <span>Prognoza pogody</span>
+        <span>Dane: OpenWeather</span>
+    </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,165 @@
+/*copilot w pełni*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: white;
+  background: #2878b9;
+  font-family: Arial, sans-serif;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  width: min(100% - 32px, 1000px);
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+.header {
+  display: none;
+}
+
+.hero {
+  width: min(100%, 600px);
+  margin: 40px auto;
+  text-align: center;
+}
+
+.intro {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.search {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  background: white;
+}
+
+.search-icon {
+  align-self: center;
+  color: #2878b9;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px;
+  border: 0;
+  outline: 0;
+}
+
+.search button {
+  padding: 0 14px;
+  border: 0;
+  border-radius: 4px;
+  color: white;
+  background: #16558c;
+  cursor: pointer;
+}
+
+.forecast {
+  margin-bottom: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #40c9c2;
+}
+
+.forecast-heading {
+  margin-bottom: 12px;
+}
+
+.forecast-heading h2 {
+  margin: 0;
+}
+
+#results {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  overflow: hidden;
+}
+
+.weather-block {
+  position: relative;
+  min-height: 160px;
+  padding: 14px;
+  color: #17334a;
+  background: white;
+}
+
+.date {
+  padding-right: 48px;
+  font-size: 12px;
+}
+
+.temperature {
+  margin-top: 18px;
+  color: #16558c;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.temperature-feels-like,
+.weather-description {
+  margin-top: 7px;
+  font-size: 13px;
+}
+
+.weather-icon {
+  position: absolute;
+  top: 28px;
+  right: 8px;
+  width: 60px;
+  height: 60px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  font-size: 12px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+@media (max-width: 700px) {
+  #results {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 450px) {
+  .search {
+    flex-wrap: wrap;
+  }
+
+  .search input {
+    flex-basis: calc(100% - 35px);
+  }
+
+  .search button {
+    width: 100%;
+    min-height: 40px;
+  }
+
+  #results {
+    grid-template-columns: 1fr;
+  }
+}
