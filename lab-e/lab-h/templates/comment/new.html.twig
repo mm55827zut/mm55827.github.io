@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nowy komentarz{% endblock %}
+
+{% block body %}
+    <div class="page-heading">
+        <p class="page-kicker">Nowy rekord</p>
+        <h1 class="page-title">Dodaj komentarz</h1>
+    </div>
+
+    <div class="card comment-panel">
+        <div class="card-body">
+            {{ include('comment/_form.html.twig', {'button_label': 'Zapisz'}) }}
+        </div>
+    </div>
+
+    <a href="{{ path('app_comment_index') }}" class="btn btn-link mt-3">Powrót do listy</a>
+{% endblock %}

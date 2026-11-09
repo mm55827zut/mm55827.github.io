@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista komentarzy{% endblock %}
+
+{% block body %}
+    <div class="page-heading d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3">
+        <div>
+            <p class="page-kicker">Panel administracyjny</p>
+            <h1 class="page-title">Lista komentarzy</h1>
+        </div>
+        <a href="{{ path('app_comment_new') }}" class="btn btn-primary">Dodaj komentarz</a>
+    </div>
+
+    <div class="card comment-panel">
+        <div class="table-responsive">
+            <table class="table table-hover comment-table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>PostId</th>
+                        <th>Content</th>
+                        <th>GifPath</th>
+                        <th>Akcje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for comment in comments %}
+                    <tr>
+                        <td>{{ comment.id }}</td>
+                        <td>{{ comment.postId }}</td>
+                        <td class="comment-content">{{ comment.content }}</td>
+                        <td>{{ comment.gifPath ?: '—' }}</td>
+                        <td class="comment-actions text-nowrap">
+                            <a href="{{ path('app_comment_show', {'id': comment.id}) }}" class="btn btn-sm btn-outline-primary">Szczegóły</a>
+                            <a href="{{ path('app_comment_edit', {'id': comment.id}) }}" class="btn btn-sm btn-outline-secondary">Edytuj</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5" class="text-center text-muted py-4">Brak komentarzy.</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

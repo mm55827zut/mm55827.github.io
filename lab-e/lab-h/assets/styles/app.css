@@ -1,3 +1,264 @@
+:root {
+    --blood: #a0001b;
+    --blood-dark: #650012;
+    --blood-bright: #d20a2e;
+    --ink: #191719;
+    --paper: #f5f2f1;
+    --line: #d8cccd;
+}
+
+* {
+    border-radius: 0 !important;
+}
+
+html,
 body {
-    background-color: skyblue;
+    min-height: 100%;
+}
+
+.site-body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.site-shell {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.site-header {
+    border-bottom: 5px solid var(--blood-bright);
+    background: var(--blood-dark);
+}
+
+.site-navbar {
+    min-height: 76px;
+}
+
+.site-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.site-brand:hover,
+.site-brand:focus {
+    color: #fff;
+}
+
+.brand-mark {
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    background: var(--blood-bright);
+    color: #fff;
+    font-size: 1.35rem;
+    font-weight: 900;
+}
+
+.brand-light {
+    color: #efb9c1;
+    font-weight: 400;
+}
+
+.site-navbar .nav-link {
+    padding: 0.75rem 1rem;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link:focus {
+    background: var(--blood);
+    color: #fff;
+}
+
+.site-toggler {
+    border: 1px solid #fff;
+}
+
+.site-toggler .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.site-main {
+    flex: 1;
+    padding-top: clamp(2rem, 5vw, 4rem);
+    padding-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.page-heading {
+    margin-bottom: 1.5rem;
+    border-left: 7px solid var(--blood-bright);
+    padding: 0.25rem 0 0.25rem 1rem;
+}
+
+.page-kicker {
+    margin-bottom: 0.25rem;
+    color: var(--blood);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.page-title {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(1.7rem, 4vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.comment-panel {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--blood);
+    background: #fff;
+    box-shadow: 6px 6px 0 rgb(101 0 18 / 10%);
+}
+
+.comment-panel .card-body {
+    padding: clamp(1rem, 3vw, 2rem);
+}
+
+.comment-table {
+    margin: 0;
+}
+
+.comment-table thead th {
+    padding: 1rem;
+    border-bottom: 0;
+    background: var(--ink);
+    color: #fff;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.comment-table tbody td {
+    padding: 0.9rem 1rem;
+    border-color: var(--line);
+    vertical-align: middle;
+}
+
+.comment-table tbody tr:hover > * {
+    background: #fff0f2;
+}
+
+.comment-content {
+    max-width: 32rem;
+    overflow-wrap: anywhere;
+}
+
+.btn {
+    border-width: 1px;
+    font-weight: 700;
+}
+
+.btn-primary {
+    border-color: var(--blood);
+    background: var(--blood);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    border-color: var(--blood-dark);
+    background: var(--blood-dark);
+}
+
+.btn-outline-primary {
+    border-color: var(--blood);
+    color: var(--blood);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    border-color: var(--blood);
+    background: var(--blood);
+    color: #fff;
+}
+
+.btn-outline-secondary,
+.btn-secondary {
+    border-color: #51484a;
+    background: #51484a;
+    color: #fff;
+}
+
+.btn-outline-secondary:hover,
+.btn-secondary:hover {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: #fff;
+}
+
+.btn-danger {
+    border-color: var(--blood-dark);
+    background: var(--blood-dark);
+}
+
+.form-control,
+.form-select {
+    border-color: #b7abad;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--blood);
+    box-shadow: 0 0 0 0.2rem rgb(160 0 27 / 15%);
+}
+
+.site-footer {
+    border-top: 4px solid var(--blood-bright);
+    background: var(--ink);
+    color: #fff;
+    padding: 1.25rem 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.footer-divider {
+    padding: 0 0.4rem;
+    color: var(--blood-bright);
+}
+
+.footer-note {
+    color: #d1c8ca;
+    font-weight: 400;
+}
+
+@media (max-width: 575.98px) {
+    .site-navbar .navbar-nav {
+        padding: 0.5rem 0 1rem;
+    }
+
+    .page-heading {
+        margin-bottom: 1.25rem;
+    }
+
+    .comment-table thead th,
+    .comment-table tbody td {
+        padding: 0.7rem;
+    }
+
+    .comment-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+    }
+
+    .site-footer .footer-note {
+        display: none;
+    }
 }
